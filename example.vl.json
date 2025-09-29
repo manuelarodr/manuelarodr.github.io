@@ -1,0 +1,22 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "data": {"url": "data/movies.json"},
+  "hconcat": [
+    {
+      "mark": "circle",
+      "params": [{"name": "selected_movies", "select": "interval"}],
+      "encoding": {
+        "x": {"field": "US Gross", "type": "quantitative"},
+        "y": {"field": "Worldwide Gross", "type": "quantitative"}
+      }
+    },
+    {
+      "mark": "bar",
+      "transform": [{"filter": {"param": "selected_movies"}}],
+      "encoding": {
+        "x": {"field": "IMDB Rating", "type": "quantitative", "bin": true},
+        "y": {"aggregate": "sum", "field": "US Gross"}
+      }
+    }
+  ]
+}
