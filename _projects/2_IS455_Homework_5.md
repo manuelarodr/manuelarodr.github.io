@@ -15,7 +15,7 @@ custom_js:
 
 
 <!-- Combined interactive chart -->
-<vegachart schema-url="{{ site.baseurl }}/assets/json/licenses_charts.json" style="width: 100%"></vegachart>
+<vegachart schema-url="{{ site.baseurl }}/assets/json/licenses_plots.json" style="width: 100%"></vegachart>
 
 ## Plot 1: Number of Professional Licenses Issued (2000 - 2021)
 The plot shows the number of professional licenses issued each year from 2000 to 2021. To create it I filtered the dataset to only include licenses originally issued within the year range and grouped by the 'Issue Year' to get the total number of licenses issued each year. Since I am displaying discrete yearly counts I chose to go with a bar chart, with the issue year on the x-axis encoded as ordinal (since year is nominal in this context but the order matters) and the 'Number of Licenses' on the y-axis, encoded as quantitative beacuse it is a count. The color is meant to help with the interaction aspect so the user can tell which bar they have selected, displayed in dark blue vs. light blue for the unselected bars.  
